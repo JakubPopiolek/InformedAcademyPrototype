@@ -29,7 +29,7 @@ router.post("/confirmVehicleDetails", (req, res) => {
 });
 
 router.post("/notEV", (req, res) => {
-    res.redirect("/index");
+    res.redirect("/vrnPage");
 });
 
 router.post("/namePageContinue", (req, res) => {
