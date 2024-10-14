@@ -17,7 +17,6 @@ router.post("/vrnPageContinue", (req, res) => {
 });
 
 router.post("/confirmVehicleDetails", (req, res) => {
-    console.log(req.session.data);
     vehicleConfirm = req.session.data["vehicleConfirm"];
     var regNumber = req.session.data["vehicle-reg-number"];
     if (regNumber === "abc" && vehicleConfirm === "yes") {
@@ -46,5 +45,10 @@ router.post("/propertyAddressPageContinue", (req, res) => {
 });
 
 router.post("/acceptSend", (req, res) => {
-    res.redirect("/applicationConfirmation");
+    if(req.session.data["vehicle-reg-number"] === "1"){
+        res.redirect("/errorPage")
+    }
+    else{
+        res.redirect("/applicationConfirmation");
+    }
 });
