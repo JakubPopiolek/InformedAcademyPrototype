@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %} {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <a href="/propertyAddressPage" class="govuk-back-link">Back</a>
+        <a href="/index" class="govuk-back-link">Back</a>
         <form class="form" method="post" action="/vrnPageContinue">
             <fieldset class="govuk-fieldset">
                 <legend
@@ -19,6 +19,7 @@
                         For example, CU57ABC
                     </div>
                     <input
+                        name="vehicle-reg-number"
                         class="govuk-input govuk-input--width-10"
                         maxlength="8"
                         autocomplete="off"
