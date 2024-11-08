@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %} {% block content %}
+<div class="govuk-width-container">
+    <a routerLink="/addressLookup" class="govuk-back-link">Back</a>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div
+          [ngClass]="{ 'govuk-form-group--error': !formValid }"
+          id="choose-address"
+          class="govuk-form-group"
+        >
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">Select an address</h1>
+          </legend>
+          <div
+            class="govuk-radios govuk-radios--small"
+            data-module="govuk-radios"
+          >
+            <p class="govuk-body">
+              2 addresses found for
+              <b>postcode</b> and <b>address line 1</b
+              >.
+              <a href="/postcodeLookup">Search again</a>
+            </p>
+            <p
+              [style.display]="formValid ? 'none' : 'block'"
+              id="line1-error"
+              class="govuk-error-message"
+            >
+              <span class="govuk-visually-hidden">Error:</span> Choose an address
+            </p>
+            <form class="form" method="post" action="/chooseAddressPageContinue">
+                <div class="govuk-radios__item">
+                  <input
+                    formControlName="selectedAddress"
+                    class="govuk-radios__input"
+                    id="{{ $index }}"
+                    name="selectedAddress"
+                    type="radio"
+                    value="{{ $index }}"
+                  />
+                  <label
+                    class="govuk-label govuk-radios__label"
+                    for="{{ $index }}"
+                  >
+                    address1
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input
+                    formControlName="selectedAddress"
+                    class="govuk-radios__input"
+                    id="{{ $index }}"
+                    name="selectedAddress"
+                    type="radio"
+                    value="{{ $index }}"
+                  />
+                  <label
+                    class="govuk-label govuk-radios__label"
+                    for="{{ $index }}"
+                  >
+                    address2
+                  </label>
+                </div>
+                </br>
+                <button
+                    type="submit"
+                    class="govuk-button"
+                    data-module="govuk-button"
+                    >
+                    Use this address
+                </button>
+            </form>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <p class="govuk-body govuk-!-margin-bottom-0">
+      <a href="/enterAddressManually" class="govuk-link"
+        >Enter address manually</a
+      >
+    </p>
+  </div>
+{% endblock %}

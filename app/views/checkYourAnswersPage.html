@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %} {% block content %}
 <div class="govuk-width-container">
-    <a href="/propertyAddressPage" class="govuk-back-link">Back</a>
+    <a href="/confirmAddress" class="govuk-back-link">Back</a>
     <main class="govuk-main-wrapper" id="main-content" role="main">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds-from-desktop">
@@ -17,22 +17,16 @@
                             <p class="govuk-body">CU57ABC</p>
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="/vrnPage"
-                                >Change<span class="govuk-visually-hidden">
-                                    vehicle registration number</span
-                                ></a
-                            >
+                            <a class="govuk-link" href="/vrnPage">Change<span class="govuk-visually-hidden">
+                                    vehicle registration number</span></a>
                         </dd>
                     </div>
                     <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">Name</dt>
+                        <dt id="name-id" class="govuk-summary-list__key">Name</dt>
                         <dd class="govuk-summary-list__value">Sarah Philips</dd>
                         <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="/namePage.html"
-                                >Change<span class="govuk-visually-hidden">
-                                    name</span
-                                ></a
-                            >
+                            <a class="govuk-link" href="/namePage.html">Change<span class="govuk-visually-hidden">
+                                    name</span></a>
                         </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -41,11 +35,8 @@
                             Example@email.com
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="/emailPage"
-                                >Change<span class="govuk-visually-hidden">
-                                    email address</span
-                                ></a
-                            >
+                            <a class="govuk-link" href="/emailPage">Change<span class="govuk-visually-hidden">
+                                    email address</span></a>
                         </dd>
                     </div>
                     <div class="govuk-summary-list__row">
@@ -54,11 +45,8 @@
                             72 Guild Street<br />London<br />SE23 6FH
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="/propertyAddressPage"
-                                >Change<span class="govuk-visually-hidden">
-                                    address</span
-                                ></a
-                            >
+                            <a class="govuk-link" href="/propertyAddressPage">Change<span class="govuk-visually-hidden">
+                                    address</span></a>
                         </dd>
                     </div>
                 </dl>
@@ -70,11 +58,7 @@
                 </p>
                 <form action="/acceptSend" method="post" novalidate>
                     <input type="hidden" name="answers-checked" value="true" />
-                    <button
-                        type="submit"
-                        class="govuk-button"
-                        data-module="govuk-button"
-                    >
+                    <button type="submit" class="govuk-button" data-module="govuk-button">
                         Accept and send
                     </button>
                 </form>

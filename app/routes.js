@@ -37,18 +37,33 @@ router.post("/namePageContinue", (req, res) => {
 });
 
 router.post("/emailPageContinue", (req, res) => {
-    res.redirect("/propertyAddressPage");
+    res.redirect("/postcodeLookup");
 });
 
-router.post("/propertyAddressPageContinue", (req, res) => {
+// router.post("/propertyAddressPageContinue", (req, res) => {
+//     res.redirect("/checkYourAnswersPage");
+// });
+
+router.post("/postcodeLookupContinue", (req, res) => {
+    res.redirect("/chooseAddress");
+});
+
+router.post("/chooseAddressPageContinue", (req, res) => {
+    res.redirect("/confirmAddress");
+});
+
+router.post("/confirmAddressContinue", (req, res) => {
     res.redirect("/checkYourAnswersPage");
 });
 
+router.post("/enterAddressManuallyContinue", (req, res) => {
+    res.redirect("/confirmAddress");
+});
+
 router.post("/acceptSend", (req, res) => {
-    if(req.session.data["vehicle-reg-number"] === "1"){
-        res.redirect("/errorPage")
-    }
-    else{
+    if (req.session.data["vehicle-reg-number"] === "1") {
+        res.redirect("/errorPage");
+    } else {
         res.redirect("/applicationConfirmation");
     }
 });

@@ -1,0 +1,31 @@
+{% extends "layouts/main.html" %} {% block content %}
+<div class="govuk-width-container">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">Confirm address</h1>
+    </legend>
+    <p class="govuk-body">
+        If this is not your address then
+        <a href="postcodeLookup">search again</a>
+    </p>
+    <div class="govuk-inset-text">
+        Address line 1 <br />
+
+        Address line 2<br />
+
+        City<br />
+
+        County <br />
+
+        Postcode
+    </div>
+    <form class="form" action="/confirmAddressContinue" method="post">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Use this address
+        </button>
+    </form>
+    <p class="govuk-body govuk-!-margin-bottom-0">
+        <a href="/enterAddressManually" class="govuk-link">Enter address manually</a>
+    </p>
+</div>
+
+{% endblock %}
